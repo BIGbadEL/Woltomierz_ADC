@@ -1,1 +1,0 @@
--wto "4dd3049512a74449ad6cae1a5b8c1d93" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "test_adc_driver_behav" "xil_defaultlib.test_adc_driver" "xil_defaultlib.glbl" -log "elaborate.log" 

@@ -1,9 +1,0 @@
-0.7
-2020.1
-May 27 2020
-19:59:15
-/home/blinku/Desktop/voltmeter-adc/voltmeter-adc.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
-/home/blinku/Desktop/voltmeter-adc/voltmeter-adc.srcs/sim_1/new/test_adc_driver.sv,1606390406,systemVerilog,,,,test_adc_driver,,,,,,,,
-/home/blinku/Desktop/voltmeter-adc/voltmeter-adc.srcs/sources_1/new/adc_driver.sv,1606390529,systemVerilog,,/home/blinku/Desktop/voltmeter-adc/voltmeter-adc.srcs/sources_1/new/clock_divider.sv,,adc_driver,,,,,,,,
-/home/blinku/Desktop/voltmeter-adc/voltmeter-adc.srcs/sources_1/new/clock_divider.sv,1606386672,systemVerilog,,/home/blinku/Desktop/voltmeter-adc/voltmeter-adc.srcs/sources_1/new/shift_register.sv,,clock_divider,,,,,,,,
-/home/blinku/Desktop/voltmeter-adc/voltmeter-adc.srcs/sources_1/new/shift_register.sv,1606387922,systemVerilog,,/home/blinku/Desktop/voltmeter-adc/voltmeter-adc.srcs/sim_1/new/test_adc_driver.sv,,shift_register,,,,,,,,

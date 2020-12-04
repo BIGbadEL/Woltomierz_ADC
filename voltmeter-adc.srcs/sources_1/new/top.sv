@@ -11,8 +11,11 @@ module top #(parameter bits=16) (input clk, rst, start, miso, rx, output cs, scl
     
     // .div -> 5 times slower clock
     clock_divider #(.div(5)) clockDivider (.clk(clk), .rst(rst), .sclk(sclk));
-    
-    uart_driver #(.nd(20)) uartDriver (.clk(clk), .rstp(rst), .rx(tx), .tx(rx), .startAdcSampling(startAdcSampling));
+ 
+    uart_driver #(.nd(20)) uut (.clk(clk), .rstp(rst), .rx(tx), .tx(rx), 
+    .startAdcSampling(start), // output 
+    .finishedAdcSampling(ready), //input
+    .dataToTransfer(OUT)); //input
         
     // .bits -> number of bits that will be sampled from the miso line and saved to out
     adc_driver #(.bits(16)) adcDriver(.clk(sclk), .rst(rst), .start(start), .miso(miso), .cs(cs), .ready(ready), .out(OUT));

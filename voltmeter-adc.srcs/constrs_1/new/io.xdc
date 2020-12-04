@@ -7,6 +7,11 @@ set_property PACKAGE_PIN W22 [get_ports {out[5]}];  # "LD5"
 set_property PACKAGE_PIN U19 [get_ports {out[6]}];  # "LD6"
 set_property PACKAGE_PIN U14 [get_ports {out[7]}];  # "LD7"
 
+# UART
+set_property PACKAGE_PIN V10 [get_ports {tx}];  # "JB3"
+set_property PACKAGE_PIN W8 [get_ports {rx}];  # "JB4"
+
+# PMOD AD1
 set_property PACKAGE_PIN Y11  [get_ports {cs}];  # "JA1"
 #set_property PACKAGE_PIN AA11 [get_ports {d0}];  # "JA2"
 set_property PACKAGE_PIN Y10  [get_ports {miso}];  # "JA3"

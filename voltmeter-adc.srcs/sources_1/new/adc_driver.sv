@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/26/2020 02:37:48 AM
-// Design Name: 
-// Module Name: adc_driver
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module adc_driver #(parameter bits=16) (input clk, rst, start, miso, output cs, reg ready, output reg [bits-1:0] out);
     integer sampling_counter;
@@ -40,9 +20,7 @@ module adc_driver #(parameter bits=16) (input clk, rst, start, miso, output cs, 
     end
 
     assign cs = (current_state != SAMPLING);
-    
-    
-    
+       
     always @(posedge clk, posedge rst)
         if(rst || current_state == IDLE)
             sampling_counter <= bits;

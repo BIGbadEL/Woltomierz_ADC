@@ -1,0 +1,16 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../voltmeter-adc.srcs/sources_1/new/adc_driver.sv" \
+"../../../../voltmeter-adc.srcs/sources_1/new/clock_divider.sv" \
+"../../../../voltmeter-adc.srcs/sources_1/new/master_axi_uart.sv" \
+"../../../../voltmeter-adc.srcs/sources_1/new/memory.sv" \
+"../../../../voltmeter-adc.srcs/sources_1/new/shift_register.sv" \
+"../../../../voltmeter-adc.srcs/sources_1/new/top.sv" \
+"../../../../voltmeter-adc.srcs/sources_1/new/uart_driver.sv" \
+"../../../../voltmeter-adc.srcs/sim_1/new/test_top.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

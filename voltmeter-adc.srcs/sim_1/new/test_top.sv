@@ -2,25 +2,22 @@
 
 module test_top();
 
-    reg clk, rst, miso, start;
+    reg clk, rst, miso;
     reg cs, sclk;
     reg [7:0] out;
 
-    top uut(.clk(clk), .rst(rst), .start(start), .miso(miso), .cs(cs), .sclk(sclk), .out(out));
+    top uut(.clk(clk), .rst(rst), .miso(miso), .cs(cs), .sclk(sclk), .out(out));
 
     initial begin
         clk <= 1'b0;
         rst <= 1'b0;
         miso <= 1'b0;
-        start <= 1'b0;
         forever #5 clk <= ~clk;
     end
     
     initial begin
         #20 rst <= 1'b1;
         #10 rst <= 1'b0;
-        #20 start <= 1'b1;
-        #100 start <= 1'b0;
     end
 
     wire [15:0] data_to_send = {1'b1, {3{1'b0}}, 1'b1, 1'b1, {9{1'b0}}, 1'b1};

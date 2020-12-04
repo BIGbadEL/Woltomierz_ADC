@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module top #(parameter bits=16) (input clk, rst, start, miso, rx, output cs, sclk, tx, output [7:0] out);
+module top #(parameter bits=16) (input clk, rst, miso, rx, output cs, sclk, tx, output [7:0] out);
     // TODO: add UART driver which takes care of rx and tx
     // TODO: generate start based on UART rx channel
     // TODO: transmit 12 of 16 read bits from the adc via tx channel
@@ -12,7 +12,7 @@ module top #(parameter bits=16) (input clk, rst, start, miso, rx, output cs, scl
     // .div -> 5 times slower clock
     clock_divider #(.div(5)) clockDivider (.clk(clk), .rst(rst), .sclk(sclk));
  
-    uart_driver #(.nd(20)) uut (.clk(clk), .rstp(rst), .rx(tx), .tx(rx), 
+    uart_driver #(.nd(20)) uut (.clk(clk), .rstp(rst), .rx(rx), .tx(tx),
     .startAdcSampling(start), // output 
     .finishedAdcSampling(ready), //input
     .dataToTransfer(OUT)); //input

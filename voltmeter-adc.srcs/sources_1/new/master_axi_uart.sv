@@ -106,7 +106,7 @@ always @(posedge clk, posedge rst)
     end
     else if (inca) begin
         received <= rdata[7:0];
-        startAdcSampling <= (rdata[7:0] === 1);
+        startAdcSampling <= (rdata[7:0] == 1);
     end
     else
         startAdcSampling <= 1'b0;

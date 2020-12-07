@@ -1,0 +1,15 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.ip_user_files/ip/axi_uartlite_0/sim/axi_uartlite_0.vhd,1607299100,vhdl,,,,axi_uartlite_0,,,,,,,,
+C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sim_1/new/simple_receiver.sv,1607335122,systemVerilog,,C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sim_1/new/simple_transmitter.sv,,simple_receiver,,,,,,,,
+C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sim_1/new/simple_transmitter.sv,1607335122,systemVerilog,,C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sources_1/new/top.sv,,simple_transmitter,,,,,,,,
+C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sim_1/new/test_uart_driver.sv,1607342207,systemVerilog,,,,test_uart_driver,,,,,,,,
+C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sources_1/new/adc_driver.sv,1607339739,systemVerilog,,C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sources_1/new/clock_divider.sv,,adc_driver,,,,,,,,
+C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sources_1/new/clock_divider.sv,1607335122,systemVerilog,,C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sources_1/new/master_axi_uart.sv,,clock_divider,,,,,,,,
+C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sources_1/new/master_axi_uart.sv,1607343499,systemVerilog,,C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sources_1/new/shift_register.sv,,master_axi_uart,,,,,,,,
+C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sources_1/new/shift_register.sv,1607335122,systemVerilog,,C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sim_1/new/simple_receiver.sv,,shift_register,,,,,,,,
+C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sources_1/new/top.sv,1607341860,systemVerilog,,C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sources_1/new/uart_driver.sv,,top,,,,,,,,
+C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sources_1/new/uart_driver.sv,1607343402,systemVerilog,,C:/Users/Grzegorz/Desktop/JOS/Woltomierz_ADC/voltmeter-adc.srcs/sim_1/new/test_uart_driver.sv,,uart_driver,,,,,,,,

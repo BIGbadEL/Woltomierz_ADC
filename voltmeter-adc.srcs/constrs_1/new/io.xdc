@@ -18,7 +18,7 @@ set_property PACKAGE_PIN Y10  [get_ports {miso}];  # "JA3"
 set_property PACKAGE_PIN AA9  [get_ports {sclk}];  # "JA4"
 
 set_property PACKAGE_PIN P16 [get_ports {rst}];  # "BTNC"
-set_property PACKAGE_PIN R16 [get_ports {start}];  # "BTND"
+#set_property PACKAGE_PIN R16 [get_ports {start}];  # "BTND"
 set_property PACKAGE_PIN Y9 [get_ports {clk}];  # "GCLK"
 
 

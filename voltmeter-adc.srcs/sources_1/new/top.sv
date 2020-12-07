@@ -8,7 +8,6 @@ module top #(parameter bits=16) (input clk, rst, miso, rx, output cs, sclk, tx, 
     // TODO: Works? :D
     
     wire [bits-1:0] OUT;
-    
     // .div -> 5 times slower clock
     clock_divider #(.div(5)) clockDivider (.clk(clk), .rst(rst), .sclk(sclk));
  
@@ -19,6 +18,11 @@ module top #(parameter bits=16) (input clk, rst, miso, rx, output cs, sclk, tx, 
         
     // .bits -> number of bits that will be sampled from the miso line and saved to out
     adc_driver #(.bits(16)) adcDriver(.clk(sclk), .rst(rst), .start(start), .miso(miso), .cs(cs), .ready(ready), .out(OUT));
-    
-    assign out = OUT[7:0];
+    reg temp;
+    always@(posedge clk, posedge rst)
+        if(rst)
+            temp <= 1'b0;
+        else if(start)
+            temp <= 1'b1;
+    assign out = {OUT[11:5], temp};
 endmodule

@@ -42,5 +42,7 @@ module adc_driver #(parameter bits=16) (input clk, rst, start, miso, output cs, 
             out <= read_bits;
             ready <= 1'b1;            
         end
+        else 
+            ready <= 1'b0;
             
 endmodule

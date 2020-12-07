@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module uart_driver #(parameter nd = 20) (input clk, rstp, rx, output tx, output startAdcSampling,
+module uart_driver #(parameter nd = 20) (input clk, rstp, rx, output tx, output reg startAdcSampling,
      input finishedAdcSampling, input [15:0] dataToTransfer);
 
     wire rstn = ~rstp;

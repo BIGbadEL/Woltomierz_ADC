@@ -32,12 +32,17 @@ module test_uart_driver();
     integer i, n;
     reg [s-1:0] mem [1:d];
     initial $readmemh("tr_val.mem", mem);
+    reg miso;
+    reg cs, sclk;
+    wire [15:0] data_to_send = {1'b1, {3{1'b0}}, 1'b1, 1'b1, {9{1'b0}}, 1'b1};
     
-    uart_driver #(.nd(d)) uut (.clk(clk), .rstp(rst), .rx(tx), .tx(rx), 
-    .startAdcSampling(startAdcSampling), // output 
-    .finishedAdcSampling(finishedAdcSampling), //input
-    .dataToTransfer(dataToTransfer)); //input
+//    uart_driver #(.nd(d)) uut (.clk(clk), .rstp(rst), .rx(tx), .tx(rx), 
+//    .startAdcSampling(startAdcSampling), // output 
+//    .finishedAdcSampling(finishedAdcSampling), //input
+//    .dataToTransfer(dataToTransfer)); //input
+
     
+    top tp(.clk(clk), .rst(rst), .miso(miso), .rx(tx), .cs(cs), .sclk(sclk), .tx(rx), .out(out));
     
     simple_transmitter #(.fclk(100_000_000), .baudrate(brate), .nb(8)) transmiter
         (.clk(clk), .rst(~rst), .str(str | str2), .val(dat), .trn(tx), .fin(fin));
@@ -46,8 +51,20 @@ module test_uart_driver();
     
     initial begin
         clk = 1'b0;
+        miso <= 1'b0;
         forever #5 clk = ~clk;
     end
+    
+    integer counter;
+    always @(posedge sclk, posedge rst)
+        if (rst) begin
+            miso <= 1'b0;
+            counter <= 16;
+        end
+        else if (counter > 0 && ~cs) begin
+            miso <= data_to_send[counter - 1];
+            counter <= counter - 1; 
+        end
     
     initial begin
         rst = 1'b0;
@@ -96,6 +113,7 @@ module test_uart_driver();
     always @(posedge startAdcSampling) begin
         finishedAdcSampling <= 1'b1;
         dataToTransfer <= {{7{1'b0}}, 1'b1};
+        #10 finishedAdcSampling <= 1'b0;
     end
         
 

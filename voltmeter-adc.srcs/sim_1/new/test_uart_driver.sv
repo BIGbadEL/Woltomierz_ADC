@@ -24,9 +24,6 @@ module test_uart_driver();
 
     localparam d = 20, s = 8, brate = 115200;
     reg clk, rst, str, str2, str_rec;
-    reg startAdcSampling;
-    reg finishedAdcSampling;
-    reg [15:0] dataToTransfer;
     reg [s-1:0] dat;
     wire [s-1:0] dat_rec;
     integer i, n;
@@ -82,7 +79,7 @@ module test_uart_driver();
         repeat(5) @(posedge clk);
         #2 str = 1'b1;
         repeat(5) @(posedge clk);
-        #2 str = 1'b0;    
+        #2 str = 1'b0;   
     end
     
     always @(negedge fin)
@@ -108,12 +105,6 @@ module test_uart_driver();
         wait (n == d);
         repeat(50) @(posedge clk);
         # 10000 $finish;
-    end
-
-    always @(posedge startAdcSampling) begin
-        finishedAdcSampling <= 1'b1;
-        dataToTransfer <= {{7{1'b0}}, 1'b1};
-        #10 finishedAdcSampling <= 1'b0;
     end
         
 

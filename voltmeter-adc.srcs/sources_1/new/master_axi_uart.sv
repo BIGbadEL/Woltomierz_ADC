@@ -27,8 +27,9 @@ always @(posedge clk, posedge rst)
     if(rst)
         rec_trn <= 1'b1;
     else if (dcnt == nd)
-//    else if (finishedAdcSampling)
         rec_trn <= 1'b0;
+    else if(dcnt == 0)
+        rec_trn <= 1'b1;
 
 //state reg
 always @(posedge clk, posedge rst)
@@ -99,17 +100,25 @@ always @(posedge clk, posedge rst)
         rrdy <= 1'b0;
        
 // Command decoder 
+integer counter;
 always @(posedge clk, posedge rst)
     if(rst) begin
         received <= 8'b0;
         startAdcSampling <= 1'b0;
+        counter <= 4;
     end
     else if (inca) begin
         received <= rdata[7:0];
         startAdcSampling <= (rdata[7:0] & 1'b1);
+        counter <= 4;
     end
-    else
+    else if(counter <= 0) begin
         startAdcSampling <= 1'b0;
+        counter <= 4;
+    end
+    else if(startAdcSampling)
+        counter <= counter - 1;
+    
         
 //memory write 
 always @(posedge clk)   //, posedge rst)

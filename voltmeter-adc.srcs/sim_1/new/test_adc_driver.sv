@@ -55,9 +55,16 @@ module test_adc_driver();
         #20 start <= 1'b1;
         #100 start <= 1'b0;
     end
+    
+    always@(posedge ready) begin
+        data_to_send <= {1'b1, {3{1'b0}}, 1'b1, 1'b1, {9{1'b0}}, 1'b1};
+        counter <= 16;
+        #100 start <= 1'b1;
+        #100 start <= 1'b0;
+    end
 
 //  wire [15:0] data_to_send = {1'b1, {3{1'b0}}, 1'b1, 1'b1, {9{1'b0}}, 1'b1};
-    wire [15:0] data_to_send = {16{1'b1}};
+    reg [15:0] data_to_send = {16{1'b1}};
 
     // If cs is down, send bits
     integer counter;
